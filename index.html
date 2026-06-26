@@ -6,8 +6,10 @@
   <title>Watson Digital — AI Side Hustle Tools</title>
   <meta name="description" content="AI tools and systems to build your faceless side hustle. No camera, no code, no audience needed.">
   <meta property="og:title" content="Watson Digital — AI Side Hustle Tools">
-  <meta property="og:description" content="AI tools and systems to build your faceless side hustle.">
+  <meta property="og:description" content="AI tools and systems to build your faceless side hustle. No camera. No code. Just AI.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/face-blurred-full.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -20,156 +22,248 @@
       align-items: center;
       padding: 40px 20px;
     }
+
+    /* Profile Header */
     .profile {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #5EE3FF, #28696E);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin: 0 auto 16px;
-      font-size: 40px;
+      overflow: hidden;
+      border: 3px solid #5EE3FF;
+      box-shadow: 0 0 30px rgba(94,227,255,0.15);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .name {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       margin-bottom: 4px;
     }
     .handle {
       font-size: 14px;
       color: #5EE3FF;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .bio {
       font-size: 14px;
       color: #8B9CB7;
-      max-width: 320px;
-      line-height: 1.5;
+      max-width: 340px;
+      line-height: 1.6;
+      margin: 0 auto;
     }
+    .faceless-tag {
+      display: inline-block;
+      background: rgba(94,227,255,0.1);
+      border: 1px solid rgba(94,227,255,0.3);
+      color: #5EE3FF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Section Labels */
     .section-label {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #5EE3FF;
-      margin: 24px 0 12px;
+      margin: 32px 0 16px;
       text-align: center;
     }
-    .link-btn {
-      display: block;
+
+    /* Link Cards */
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
       width: 100%;
-      max-width: 380px;
-      padding: 16px 24px;
+      max-width: 400px;
+      padding: 16px;
       margin: 8px auto;
       background: #141829;
       border: 1px solid #1E2540;
-      border-radius: 12px;
-      color: #F4ECDC;
+      border-radius: 14px;
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      text-align: center;
+      color: #F4ECDC;
       transition: all 0.2s;
     }
-    .link-btn:hover {
+    .link-card:hover {
       background: #1A2040;
       border-color: #5EE3FF;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(94,227,255,0.08);
     }
-    .link-btn .sub {
-      display: block;
-      font-size: 12px;
-      font-weight: 400;
-      color: #8B9CB7;
-      margin-top: 4px;
-    }
-    .link-btn.featured {
+    .link-card.featured {
       background: linear-gradient(135deg, #28696E, #1A4A4E);
       border-color: #5EE3FF;
     }
-    .link-btn.featured:hover {
+    .link-card.featured:hover {
       background: linear-gradient(135deg, #2E7A7F, #1E5A5E);
     }
-    .link-btn.jvzoo {
+    .link-card.jvzoo {
       background: linear-gradient(135deg, #2D1B4E, #1A1035);
       border-color: #9B59B6;
     }
-    .link-btn.jvzoo:hover {
+    .link-card.jvzoo:hover {
       border-color: #BB79D6;
     }
-    .emoji { margin-right: 8px; }
+
+    .card-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      background: rgba(94,227,255,0.08);
+    }
+    .link-card.jvzoo .card-icon {
+      background: rgba(155,89,182,0.12);
+    }
+
+    .card-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: #8B9CB7;
+      line-height: 1.5;
+    }
+    .card-win {
+      font-size: 11px;
+      color: #5EE3FF;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .card-arrow {
+      flex-shrink: 0;
+      color: #4A5568;
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+    .link-card:hover .card-arrow {
+      color: #5EE3FF;
+    }
+
+    /* Footer */
     .footer {
-      margin-top: 40px;
+      margin-top: 48px;
       text-align: center;
       font-size: 12px;
       color: #4A5568;
+      line-height: 1.8;
     }
     .footer a { color: #5EE3FF; text-decoration: none; }
-    .badge {
-      display: inline-block;
-      background: #5EE3FF;
-      color: #0A0E1A;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
+    .footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
+<!-- Profile Header -->
 <div class="profile">
-  <div class="avatar">🤖</div>
+  <div class="avatar">
+    <img src="assets/face-blurred-full.jpg" alt="Watson Digital">
+  </div>
   <div class="name">Watson Digital</div>
   <div class="handle">@awatson.digital</div>
   <div class="bio">AI tools & systems to build your faceless side hustle. No camera. No code. No audience. Just AI and a few nights a week.</div>
+  <div class="faceless-tag">🤖 Faceless by Design</div>
 </div>
 
+<!-- Start Here -->
 <div class="section-label">🔥 Start Here</div>
 
-<a href="https://allen.store/allen?aff=5to9" class="link-btn featured" target="_blank" rel="noopener">
-  <span class="emoji">🤖</span> Allen AI — The Tool Behind Everything
-  <span class="sub">$50/mo · AI does 80-90% of the work · Start tonight</span>
+<a href="https://allen.store/allen?aff=5to9" class="link-card featured" target="_blank" rel="noopener">
+  <div class="card-icon">🤖</div>
+  <div class="card-content">
+    <div class="card-title">Allen AI — The Tool Behind Everything</div>
+    <div class="card-desc">AI writes your scripts, finds trending content, and builds your store. You just post.</div>
+    <div class="card-win">→ Start posting tonight, even with zero followers</div>
+  </div>
+  <div class="card-arrow">›</div>
 </a>
 
-<a href="https://allen.store/5to9/watsondigital" class="link-btn" target="_blank" rel="noopener">
-  <span class="emoji">🛒</span> Our Store — Digital Products & Bundles
-  <span class="sub">Courses, templates, and the B-Roll bundle</span>
+<a href="https://allen.store/5to9/watsondigital" class="link-card" target="_blank" rel="noopener">
+  <div class="card-icon">🛒</div>
+  <div class="card-content">
+    <div class="card-title">Our Store — Digital Products & Bundles</div>
+    <div class="card-desc">Done-for-you templates, courses, and the B-Roll bundle. Everything you need to launch fast.</div>
+    <div class="card-win">→ Skip the setup — grab what's already working</div>
+  </div>
+  <div class="card-arrow">›</div>
 </a>
 
-<div class="section-label">💰 High-Ticket Offers</div>
+<!-- Systems -->
+<div class="section-label">⚡ Full Systems</div>
 
-<a href="https://www.jvzoo.com/affiliate/affiliateinfonew/index/434205" class="link-btn jvzoo" target="_blank" rel="noopener">
-  <span class="emoji">🚀</span> AI Arbitrage Blueprint
-  <span class="sub">$1,997 · Full system for AI-powered income · Richard Yu</span>
+<a href="https://www.jvzoo.com/affiliate/affiliateinfonew/index/434205" class="link-card jvzoo" target="_blank" rel="noopener">
+  <div class="card-icon">🚀</div>
+  <div class="card-content">
+    <div class="card-title">AI Arbitrage Blueprint</div>
+    <div class="card-desc">The complete playbook for building income with AI-powered content. Step-by-step, no fluff.</div>
+    <div class="card-win">→ The same system behind our daily Reels</div>
+  </div>
+  <div class="card-arrow">›</div>
 </a>
 
-<a href="https://jvz5.com/c/3591111/435245" class="link-btn jvzoo" target="_blank" rel="noopener">
-  <span class="emoji">💎</span> Freedom Profit System
-  <span class="sub">The complete faceless AI business system</span>
+<a href="https://jvz5.com/c/3591111/435245" class="link-card jvzoo" target="_blank" rel="noopener">
+  <div class="card-icon">💎</div>
+  <div class="card-content">
+    <div class="card-title">Freedom Profit System</div>
+    <div class="card-desc">Build a faceless AI business from scratch. No experience needed — the system does the heavy lifting.</div>
+    <div class="card-win">→ Your first content can go live this week</div>
+  </div>
+  <div class="card-arrow">›</div>
 </a>
 
+<!-- Free Resources -->
 <div class="section-label">📚 Free Resources</div>
 
-<a href="https://www.instagram.com/awatson.digital/" class="link-btn" target="_blank" rel="noopener">
-  <span class="emoji">📱</span> Follow @awatson.digital
-  <span class="sub">Daily AI side hustle tips · 3+ Reels/day</span>
+<a href="https://www.instagram.com/awatson.digital/" class="link-card" target="_blank" rel="noopener">
+  <div class="card-icon">📱</div>
+  <div class="card-content">
+    <div class="card-title">Follow @awatson.digital</div>
+    <div class="card-desc">Daily AI side hustle tips, proof-of-concept Reels, and behind-the-scenes of what's actually working.</div>
+    <div class="card-win">→ See real results before you commit to anything</div>
+  </div>
+  <div class="card-arrow">›</div>
 </a>
 
-<a href="https://www.instagram.com/awatson.digital/" class="link-btn" target="_blank" rel="noopener">
-  <span class="emoji">💬</span> Comment "FACELESS" on Any Post
-  <span class="sub">Get the free 5-play starter kit delivered to your DMs</span>
+<a href="https://www.instagram.com/awatson.digital/" class="link-card" target="_blank" rel="noopener">
+  <div class="card-icon">💬</div>
+  <div class="card-content">
+    <div class="card-title">Comment "FACELESS" on Any Post</div>
+    <div class="card-desc">Get the free 5-play starter kit delivered to your DMs. Zero cost, zero commitment.</div>
+    <div class="card-win">→ The exact plays behind our first 100 Reels</div>
+  </div>
+  <div class="card-arrow">›</div>
 </a>
 
+<!-- Footer -->
 <div class="footer">
   <p>Built faceless. Built with AI. Built on nights & weekends.</p>
-  <p style="margin-top: 8px;">© 2026 Watson Digital · <a href="https://allen.store/allen?aff=5to9">Powered by Allen AI</a></p>
+  <p>© 2026 Watson Digital · <a href="https://allen.store/allen?aff=5to9">Powered by Allen AI</a></p>
 </div>
 
 </body>
