@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Reels/Day AI Content Engine — watson-digital.net</title>
+  <meta name="description" content="Automate 3 Instagram Reels a day for your service business — from script to published Reel — without ever hitting record. $297 one-time.">
+  <meta property="og:title" content="3 Reels/Day AI Content Engine — watson-digital.net">
+  <meta property="og:description" content="Automate 3 Instagram Reels a day for your service business — from script to published Reel — without ever hitting record.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="hero-ai-avatar.jpg">
+  <meta property="og:url" content="https://watson-digital.net/ai-content-engine/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="3 Reels/Day AI Content Engine — watson-digital.net">
+  <meta name="twitter:description" content="Automate 3 Instagram Reels a day for your service business — without ever hitting record.">
+  <meta name="twitter:image" content="hero-ai-avatar.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0A0E1A;
+      color: #F4ECDC;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── Back Link ─── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #5EE3FF;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 16px 24px;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      padding: 80px 0 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+      filter: saturate(0.8);
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(transparent, #0A0E1A);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .eyebrow {
+      color: #5EE3FF;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+    .hero h1 em { font-style: normal; color: #5EE3FF; }
+    .hero p {
+      font-size: 20px;
+      color: #c8c0b4;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    /* ─── CTA Button ─── */
+    .cta-btn {
+      display: inline-block;
+      background: #5EE3FF;
+      color: #0A0E1A;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-btn:hover {
+      background: #fff;
+      color: #0A0E1A;
+      box-shadow: 0 0 30px rgba(94,227,255,0.3);
+    }
+    .cta-btn.secondary {
+      background: transparent;
+      border: 2px solid #5EE3FF;
+      color: #5EE3FF;
+      font-size: 16px;
+      padding: 14px 32px;
+    }
+    .cta-btn.secondary:hover {
+      background: #5EE3FF;
+      color: #0A0E1A;
+    }
+    .cta-btn.dark {
+      background: #28696E;
+      color: #fff;
+    }
+    .cta-btn.dark:hover {
+      background: #5EE3FF;
+      color: #0A0E1A;
+    }
+
+    /* ─── Sections ─── */
+    section { padding: 60px 0; }
+    section + section { border-top: 1px solid rgba(244,236,220,0.08); }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    h2 em { font-style: normal; color: #5EE3FF; }
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    p { margin-bottom: 16px; color: #c8c0b4; }
+    p strong { color: #F4ECDC; }
+    a { color: #5EE3FF; }
+
+    /* ─── Solution Steps ─── */
+    .step-list { list-style: none; margin: 24px 0; }
+    .step-list li {
+      padding: 12px 0 12px 48px;
+      position: relative;
+      color: #c8c0b4;
+      font-size: 17px;
+    }
+    .step-list li .num {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 32px;
+      height: 32px;
+      background: #5EE3FF;
+      color: #0A0E1A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ─── Product Cards ─── */
+    .product-card {
+      background: #141829;
+      border: 1px solid rgba(94,227,255,0.15);
+      border-radius: 12px;
+      padding: 32px;
+      margin: 24px 0;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .product-card:hover {
+      border-color: rgba(94,227,255,0.4);
+      box-shadow: 0 8px 32px rgba(94,227,255,0.08);
+    }
+    .product-card .price {
+      font-size: 36px;
+      font-weight: 800;
+      color: #5EE3FF;
+      margin: 8px 0 4px;
+    }
+    .product-card .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #5EE3FF;
+      opacity: 0.7;
+    }
+    .product-card ul {
+      list-style: none;
+      margin: 16px 0;
+    }
+    .product-card ul li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      color: #c8c0b4;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .product-card ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #5EE3FF;
+      font-weight: 700;
+    }
+
+    /* Bundle variant */
+    .product-card.bundle {
+      background: linear-gradient(135deg, rgba(40,105,110,0.2), rgba(94,227,255,0.08));
+      border-color: rgba(94,227,255,0.3);
+    }
+    .product-card.bundle .savings {
+      display: inline-block;
+      background: #5EE3FF;
+      color: #0A0E1A;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    /* ─── Profession Grid ─── */
+    .profession-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .profession-card {
+      background: #141829;
+      border: 1px solid rgba(244,236,220,0.08);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 15px;
+      color: #c8c0b4;
+      transition: border-color 0.2s;
+    }
+    .profession-card:hover { border-color: rgba(94,227,255,0.3); }
+    .profession-card .emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+    .profession-card strong { color: #F4ECDC; display: block; margin-bottom: 4px; }
+
+    /* ─── Economics Table ─── */
+    .econ-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+    .econ-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(244,236,220,0.08);
+      font-size: 16px;
+    }
+    .econ-table td:first-child { color: #c8c0b4; }
+    .econ-table td:last-child { text-align: right; color: #888; }
+    .econ-table tr:last-child td {
+      border-bottom: none;
+      color: #5EE3FF;
+      font-weight: 700;
+    }
+    .econ-table tr:last-child td:last-child { color: #5EE3FF; }
+
+    /* ─── Guarantee ─── */
+    .guarantee {
+      text-align: center;
+      padding: 48px 32px;
+      background: rgba(94,227,255,0.04);
+      border: 1px solid rgba(94,227,255,0.15);
+      border-radius: 12px;
+      margin: 32px 0;
+    }
+    .guarantee .seal { font-size: 48px; margin-bottom: 16px; }
+    .guarantee h3 { margin-bottom: 12px; }
+
+    /* ─── FAQ ─── */
+    .faq-item {
+      margin: 24px 0;
+      padding: 24px;
+      background: #141829;
+      border: 1px solid rgba(244,236,220,0.08);
+      border-radius: 10px;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-color: rgba(94,227,255,0.2); }
+    .faq-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .faq-item p { font-size: 16px; margin-bottom: 0; }
+
+    /* ─── Checklist (Who This Is For / Not For) ─── */
+    .checklist { list-style: none; margin: 20px 0; }
+    .checklist li {
+      padding: 8px 0 8px 32px;
+      position: relative;
+      font-size: 17px;
+    }
+    .checklist li::before {
+      position: absolute;
+      left: 0;
+      font-size: 18px;
+    }
+    .checklist li.yes::before { content: "✅"; }
+    .checklist li.no::before { content: "❌"; }
+    .checklist li.yes { color: #c8c0b4; }
+    .checklist li.no { color: #888; }
+
+    /* ─── Pull Quote ─── */
+    .pull-quote {
+      border-left: 3px solid #5EE3FF;
+      padding: 20px 24px;
+      margin: 32px 0;
+      background: rgba(94,227,255,0.04);
+      border-radius: 0 8px 8px 0;
+      font-size: 19px;
+      font-style: italic;
+      color: #F4ECDC;
+      line-height: 1.6;
+    }
+
+    /* ─── Why Now Modal ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #141824;
+      border: 1px solid rgba(94,227,255,0.2);
+      border-radius: 12px;
+      max-width: 580px;
+      width: 100%;
+      padding: 40px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      color: #888;
+      font-size: 24px;
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+    .modal-close:hover { color: #fff; }
+
+    /* ─── Final CTA ─── */
+    .final-cta {
+      text-align: center;
+      padding: 80px 0;
+    }
+    .final-cta h2 { margin-bottom: 12px; }
+    .final-cta p { font-size: 18px; margin-bottom: 32px; }
+    .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── Footer ─── */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid rgba(244,236,220,0.08);
+      color: #666;
+      font-size: 14px;
+    }
+    footer a { color: #5EE3FF; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 30px; }
+      h2 { font-size: 24px; }
+      .hero { padding: 50px 0 40px; }
+      .product-card { padding: 24px; }
+      .cta-group { flex-direction: column; align-items: center; }
+      .profession-grid { grid-template-columns: 1fr; }
+      .faq-item { padding: 20px; }
+      .guarantee { padding: 32px 20px; }
+      .modal-content { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Back to Home -->
+<div class="container">
+  <a href="/" class="back-link">← Back to Watson Digital</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════ HERO ═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="hero-ai-avatar.jpg" alt="AI digital avatar representing automated content creation">
+  </div>
+  <div class="container">
+    <div class="eyebrow">watson-digital.net presents</div>
+    <h1>3 Reels a Day.<br>Your Face (or Not).<br><em>Zero Filming.</em></h1>
+    <p>A complete system for service businesses to automate Instagram content — from script to published Reel — without ever hitting record.</p>
+    <a href="#pricing" class="cta-btn">Get Started — $297</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ WHY NOW ═══════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <h2>Instagram is <em>paying</em> you to post Reels.</h2>
+    <p style="font-size:20px;">Right now, Instagram's algorithm gives Reels creators <strong style="color:#5EE3FF;font-size:24px;">3–5× more organic reach</strong> than static posts. New accounts get an even bigger boost — Instagram is <span style="border-bottom:2px solid #5EE3FF;padding-bottom:2px;">actively recruiting creators</span> to compete with TikTok.</p>
+    <p style="font-size:20px;"><strong>This window is open <span style="color:#5EE3FF;">right now</span></strong> — and it won't stay open forever.</p>
+    <p style="margin-top:12px;"><a href="#" onclick="document.getElementById('whyNowModal').classList.add('active');return false;" style="color:#5EE3FF;font-size:15px;border-bottom:1px solid rgba(94,227,255,0.4);">How does this work? Show me the details →</a></p>
+  </div>
+</section>
+
+<!-- Why Now Modal -->
+<div id="whyNowModal" class="modal-overlay" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('whyNowModal').classList.remove('active')">&times;</button>
+    <h3 style="color:#5EE3FF;margin-bottom:16px;">Why Instagram Is Boosting Reels Creators</h3>
+    <p style="color:#c8c0b4;font-size:16px;margin-bottom:12px;">Instagram is in a war with TikTok and YouTube for short-form video dominance. To win, they need more Reels content. Their solution? <strong style="color:#fff;">Actively boost anyone who posts Reels consistently.</strong></p>
+    <p style="color:#c8c0b4;font-size:16px;margin-bottom:12px;">Here's what that means for your account:</p>
+    <ul style="color:#c8c0b4;font-size:16px;margin:0 0 16px 20px;">
+      <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">3–5× more reach</strong> — Reels get shown to non-followers on the Explore page and in suggested content. Static posts don't.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">New creator boost</strong> — Instagram gives newer Reels accounts a temporary reach spike to test their content. This is your unfair advantage if you start now.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">Algorithmic learning</strong> — the more you post, the faster Instagram learns who your audience is. 3 posts/day = 90 data points/month. 1 post/week = 4.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">Compounding effect</strong> — older Reels keep getting pushed for weeks. A video you posted in Month 1 still drives views in Month 3.</li>
+    </ul>
+    <p style="color:#c8c0b4;font-size:16px;margin-bottom:12px;"><strong style="color:#fff;">The window is closing.</strong> As more creators adopt Reels, the boost per creator shrinks. Accounts that build their content engine in 2026 will have a <strong style="color:#5EE3FF;">compounding advantage</strong> over everyone who starts in 2027.</p>
+    <p style="color:#c8c0b4;font-size:14px;margin:0;"><em>Sources: Instagram's @creators account, Meta's Q4 2025 earnings call, Later.com's 2026 Instagram Algorithm Report.</em></p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ PROBLEM ═══════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <h2>Here's what most businesses do on Instagram.</h2>
+    <p>They post once a week. Maybe twice. A blurry photo of a listing. A motivational quote they stole from someone else's page. A "DM me for details" that nobody responds to.</p>
+    <p>Meanwhile, the account posting <strong>3 Reels a day</strong> — with a clear hook, a specific message, and a call to action — is eating their lunch.</p>
+    <p>Not because they're better. Because they're <strong>showing up more.</strong></p>
+    <p>Instagram's algorithm doesn't reward perfection. It rewards consistency. And right now, it's <strong>actively boosting</strong> accounts that post Reels regularly. The math isn't even close.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ SOLUTION ═══════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <h2>The system that does it for you.</h2>
+    <p><strong>The 3 Reels/Day AI Content Engine</strong> is a complete system for service businesses, coaches, and local professionals to automate their Instagram content — from script to published Reel — without filming a single second.</p>
+
+    <h3 style="margin-top:32px;">How it works:</h3>
+    <ul class="step-list">
+      <li><span class="num">1</span><strong>AI finds what's working</strong> in your niche — competitor analysis, trending hooks, proven topics</li>
+      <li><span class="num">2</span><strong>AI writes your scripts</strong> — 45–59 seconds, optimized for engagement, with your CTA baked in. You don't have to write a single word unless you want to.</li>
+      <li><span class="num">3</span><strong>An AI avatar delivers it on camera</strong> — your face (if you want) or a professional avatar that looks and sounds like a real person</li>
+      <li><span class="num">4</span><strong>The system assembles the video</strong> — backgrounds, B-roll, captions, branding</li>
+      <li><span class="num">5</span><strong>You publish on schedule</strong> — 3 Reels a day, every day, with a simple batching workflow</li>
+    </ul>
+
+    <p style="margin-top:24px;">You approve. The system produces. Instagram does the rest.</p>
+    <p><strong>Total time after setup: ~30 minutes per week.</strong></p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ WHAT YOU GET / PRICING ═══════════════════════════════════ -->
+<section id="pricing">
+  <div class="container">
+    <h2>What you get.</h2>
+
+    <!-- Tier 1 -->
+    <div class="product-card">
+      <div class="label">Tier 1</div>
+      <h3>3 Reels/Day AI Avatar Content Engine</h3>
+      <div class="price">$297</div>
+      <p>8 modules that build your entire content pipeline:</p>
+      <ul>
+        <li><strong>The 3-Post-a-Day Strategy</strong> — why volume wins, content flywheel, niche positioning</li>
+        <li><strong>Finding Winning Content</strong> — Allen AI, ChatGPT, Claude, manual research. The system finds what's working so you never stare at a blank page.</li>
+        <li><strong>Script Writing That Converts</strong> — 7 hook formulas, 10 plug-and-play templates, compliance rules. AI writes the scripts for you — or write your own if you prefer.</li>
+        <li><strong>Avatar Video Production</strong> — HeyGen walkthrough, voice selection, SSML pacing. Your avatar delivers your message like a professional presenter.</li>
+        <li><strong>Video Assembly &amp; Polish</strong> — FFmpeg automation, Pexels B-roll, branded backgrounds, auto-captions</li>
+        <li><strong>Publishing &amp; Scheduling</strong> — manual upload workflow, best posting times, content batching so you always have videos ready to post</li>
+        <li><strong>Content Calendar &amp; Batching</strong> — 21 videos in one 2.5-hour session, themed days, recycling system</li>
+        <li><strong>Analytics &amp; Iteration</strong> — A/B hook testing, monthly audit, script library</li>
+      </ul>
+      <a href="#pricing" class="cta-btn" style="display:block;text-align:center;margin-top:20px;">Get Tier 1 — $297</a>
+    </div>
+
+    <!-- Tier 2 -->
+    <div class="product-card">
+      <div class="label">Tier 2</div>
+      <h3>3 Reels/Day AI Personal Brand Machine</h3>
+      <div class="price">$497</div>
+      <p>Everything in Tier 1, PLUS 5 advanced modules:</p>
+      <ul>
+        <li><strong>Your Digital Twin</strong> — create an AI avatar from YOUR photo. Your face. Your expressions. Your presence — on autopilot.</li>
+        <li><strong>Voice Cloning</strong> — your avatar speaks in YOUR voice, not a stock voice. You'll hear yourself say words you've never spoken — and you can't even tell it's not you. You'll be blown away.</li>
+        <li><strong>Personal Brand at Scale</strong> — 5-layer framework for building recognition without filming. Your avatar can sell any product or service you represent — like a professional salesperson who never takes a day off.</li>
+        <li><strong>DM Automation &amp; Lead Capture</strong> — keyword triggers, auto-DM responses, qualification sequences, booking integration. Your content drives conversations while you sleep.</li>
+        <li><strong>From Content to Clients</strong> — revenue tracking, inbound offer design, call framework. Close the loop from Reel to revenue.</li>
+      </ul>
+      <a href="#pricing" class="cta-btn" style="display:block;text-align:center;margin-top:20px;">Get Tier 2 — $497</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ WHO THIS IS FOR ══════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <h2>Built for businesses that need to show up — but don't have time to film.</h2>
+    <p>This system was designed for service professionals who know they need content but can't spend hours a day behind a camera. If your clients find you through relationships, referrals, or local search — Instagram content is your multiplier.</p>
+
+    <div class="profession-grid">
+      <div class="profession-card">
+        <span class="emoji">🏡</span>
+        <strong>Realtors &amp; Mortgage Brokers</strong>
+        Show listings, share market insights, and get inbound buyer leads — without filming walkthroughs every day.
+      </div>
+      <div class="profession-card">
+        <span class="emoji">🦷</span>
+        <strong>Cosmetic Dentists &amp; Med Spas</strong>
+        Educate on procedures, share before/after results, and book consultations — all from AI-generated content.
+      </div>
+      <div class="profession-card">
+        <span class="emoji">🛡️</span>
+        <strong>Insurance Agents &amp; Financial Planners</strong>
+        Break down complex products, build trust, and generate quote requests — without cold calling.
+      </div>
+      <div class="profession-card">
+        <span class="emoji">💪</span>
+        <strong>Coaches, Trainers &amp; Consultants</strong>
+        Share your methodology, prove your results, and fill your calendar with discovery calls.
+      </div>
+      <div class="profession-card">
+        <span class="emoji">📸</span>
+        <strong>Photographers &amp; Home Organizers</strong>
+        Showcase your work, teach your process, and get booked — without spending your whole day creating content.
+      </div>
+      <div class="profession-card">
+        <span class="emoji">🍳</span>
+        <strong>Restaurants &amp; Local Services</strong>
+        Stay top-of-mind in your local market. Daily content = daily visibility = daily foot traffic.
+      </div>
+    </div>
+
+    <p style="margin-top:24px;">If your business depends on people knowing who you are and what you do — this system works for you.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ ECONOMICS ═════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <h2>The economics.</h2>
+    <table class="econ-table">
+      <tr><td>A social media manager</td><td>$1,500–$3,000/mo</td></tr>
+      <tr><td>A videographer (per video)</td><td>$200–$500</td></tr>
+      <tr><td>DIY filming + editing (per video)</td><td>1–2 hours of YOUR time</td></tr>
+      <tr><td><strong>This system (per video)</strong></td><td><strong>~$2.25</strong></td></tr>
+    </table>
+    <p>90 Reels a month. For less than the cost of one professionally filmed video.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ GUARANTEE ═════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="guarantee">
+      <div class="seal">🛡️</div>
+      <h3>30-Day Money-Back Guarantee</h3>
+      <p>Go through the modules. Build the pipeline. Post for 30 days. If you don't see a clear path from content to leads — email us and we'll refund every penny. No hoops. No "let me talk you out of it."</p>
+      <p><strong>We can offer this because the system works.</strong> The only variable is whether you do.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FAQ ═══════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <h2>Frequently Asked Questions.</h2>
+
+    <div class="faq-item">
+      <h4>Do I need to show my face?</h4>
+      <p>No. Tier 1 uses stock AI avatars — professional, polished, not your face. Tier 2 lets you create a digital twin from your own photo if you want stronger brand recognition. Either way, you never film.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Do I have to write my own scripts?</h4>
+      <p>No. The system uses AI (Allen AI, ChatGPT, Claude) to write scripts for you. You can approve them as-is, tweak them, or write your own from scratch. Most users never write a single script — they just approve and go.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Can my avatar really sell my specific service?</h4>
+      <p>Your avatar can deliver any message you want — product pitches, service explanations, educational content, testimonials. It speaks like a professional salesperson who never stumbles, never forgets the script, and never takes a day off. You tell it what to say. It delivers.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>How much does ongoing operation cost?</h4>
+      <p>HeyGen costs ~$50–80/month. Everything else (FFmpeg, Meta API, Pexels) is free. Total: $50–80/month for 90 Reels.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>How long until I see results?</h4>
+      <p>Most accounts see traction in 60–90 days of consistent posting. Month 1 is about building data. Month 2 is about doubling down. By month 3, leads start coming in.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Do I need technical skills?</h4>
+      <p>If you can follow step-by-step instructions, you can build this. The modules include exact commands, scripts, and screenshots. No coding required.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Can I use this for multiple businesses?</h4>
+      <p>The system is designed for one Instagram account. If you manage multiple, each needs its own pipeline — but the training applies to all of them.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Why not just use VEED, CapCut, or Canva?</h4>
+      <p>Those are video <strong>editors</strong> — they help you edit footage you already have. They don't write scripts, create avatars, find trending content, or publish to Instagram. You'd still be doing all the creative work manually. This system is a content <strong>factory</strong> — it handles the entire pipeline from idea to published Reel. VEED is a great tool for editing a video. We're a system for producing 90 of them a month on autopilot.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FINAL CTA ═════════════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Stop posting once a week and wondering why nobody engages.</h2>
+    <p>3 Reels a day. Your message. Your hooks. Your CTAs. Running on autopilot while you close deals.</p>
+    <div class="cta-group">
+      <a href="#pricing" class="cta-btn">Get Started — $297</a>
+      <a href="#pricing" class="cta-btn secondary">Personal Brand Machine — $497</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p><a href="/">← Back to Watson Digital</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Advancing AI LLC &mdash; <a href="/">watson-digital.net</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
