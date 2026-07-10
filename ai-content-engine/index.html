@@ -17,20 +17,34 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0A0E1A;
+      --panel: #161b22;
+      --panel2: #1c232d;
+      --cyan: #5EE3FF;
+      --teal: #28696E;
+      --cream: #F4ECDC;
+      --text: #c9d1d9;
+      --head: #f0f6fc;
+      --muted: #8b949e;
+      --line: #2d333b;
+      --card-bg: #141829;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0A0E1A;
-      color: #F4ECDC;
+      background: var(--bg);
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(94,227,255,0.015) 39px, rgba(94,227,255,0.015) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(94,227,255,0.015) 39px, rgba(94,227,255,0.015) 40px);
+      color: var(--text);
       line-height: 1.7;
       font-size: 17px;
     }
-
+    .mono { font-family: 'JetBrains Mono', monospace; }
     .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
     /* ─── Back Link ─── */
@@ -38,7 +52,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: #5EE3FF;
+      color: var(--cyan);
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
@@ -71,28 +85,30 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 200px;
-      background: linear-gradient(transparent, #0A0E1A);
+      background: linear-gradient(transparent, var(--bg));
     }
     .hero .container { position: relative; z-index: 1; }
     .hero .eyebrow {
-      color: #5EE3FF;
+      color: var(--cyan);
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 20px;
+      font-family: 'JetBrains Mono', monospace;
     }
+    .hero .eyebrow::before { content: "// "; color: var(--teal); }
     .hero h1 {
       font-size: 44px;
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 24px;
-      color: #fff;
+      color: var(--head);
     }
-    .hero h1 em { font-style: normal; color: #5EE3FF; }
+    .hero h1 em { font-style: normal; color: var(--cyan); }
     .hero p {
       font-size: 20px;
-      color: #c8c0b4;
+      color: var(--muted);
       max-width: 560px;
       margin: 0 auto 40px;
     }
@@ -100,8 +116,8 @@
     /* ─── CTA Button ─── */
     .cta-btn {
       display: inline-block;
-      background: #5EE3FF;
-      color: #0A0E1A;
+      background: var(--cyan);
+      color: var(--bg);
       font-family: 'Inter', sans-serif;
       font-size: 18px;
       font-weight: 700;
@@ -111,59 +127,63 @@
       transition: all 0.2s;
       border: none;
       cursor: pointer;
+      box-shadow: 0 0 20px rgba(94,227,255,0.15);
     }
     .cta-btn:hover {
       background: #fff;
-      color: #0A0E1A;
+      color: var(--bg);
       box-shadow: 0 0 30px rgba(94,227,255,0.3);
     }
     .cta-btn.secondary {
       background: transparent;
-      border: 2px solid #5EE3FF;
-      color: #5EE3FF;
+      border: 2px solid var(--cyan);
+      color: var(--cyan);
       font-size: 16px;
       padding: 14px 32px;
+      box-shadow: none;
     }
     .cta-btn.secondary:hover {
-      background: #5EE3FF;
-      color: #0A0E1A;
+      background: var(--cyan);
+      color: var(--bg);
     }
     .cta-btn.dark {
-      background: #28696E;
+      background: var(--teal);
       color: #fff;
     }
     .cta-btn.dark:hover {
-      background: #5EE3FF;
-      color: #0A0E1A;
+      background: var(--cyan);
+      color: var(--bg);
     }
 
     /* ─── Sections ─── */
     section { padding: 60px 0; }
-    section + section { border-top: 1px solid rgba(244,236,220,0.08); }
-
+    section + section { border-top: 1px solid var(--line); }
     h2 {
       font-size: 30px;
       font-weight: 700;
       margin-bottom: 20px;
-      color: #fff;
+      color: var(--head);
+      padding-left: 16px;
+      border-left: 3px solid var(--cyan);
+      box-shadow: -4px 0 14px rgba(94,227,255,0.1);
     }
-    h2 em { font-style: normal; color: #5EE3FF; }
+    h2 em { font-style: normal; color: var(--cyan); }
     h3 {
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 12px;
-      color: #fff;
+      color: var(--head);
     }
-    p { margin-bottom: 16px; color: #c8c0b4; }
-    p strong { color: #F4ECDC; }
-    a { color: #5EE3FF; }
+    p { margin-bottom: 16px; color: var(--text); }
+    p strong { color: var(--head); }
+    a { color: var(--cyan); }
 
     /* ─── Solution Steps ─── */
     .step-list { list-style: none; margin: 24px 0; }
     .step-list li {
       padding: 12px 0 12px 48px;
       position: relative;
-      color: #c8c0b4;
+      color: var(--text);
       font-size: 17px;
     }
     .step-list li .num {
@@ -172,42 +192,56 @@
       top: 12px;
       width: 32px;
       height: 32px;
-      background: #5EE3FF;
-      color: #0A0E1A;
+      background: var(--cyan);
+      color: var(--bg);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
       font-size: 14px;
+      box-shadow: 0 0 12px rgba(94,227,255,0.2);
     }
 
     /* ─── Product Cards ─── */
     .product-card {
-      background: #141829;
-      border: 1px solid rgba(94,227,255,0.15);
+      background: var(--card-bg);
+      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 32px;
       margin: 24px 0;
       transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .product-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal));
+      border-radius: 12px 12px 0 0;
     }
     .product-card:hover {
-      border-color: rgba(94,227,255,0.4);
+      border-color: rgba(94,227,255,0.3);
       box-shadow: 0 8px 32px rgba(94,227,255,0.08);
     }
     .product-card .price {
       font-size: 36px;
       font-weight: 800;
-      color: #5EE3FF;
+      color: var(--cyan);
       margin: 8px 0 4px;
+      font-family: 'JetBrains Mono', monospace;
     }
     .product-card .label {
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #5EE3FF;
+      color: var(--cyan);
       opacity: 0.7;
+      font-family: 'JetBrains Mono', monospace;
     }
     .product-card ul {
       list-style: none;
@@ -216,7 +250,7 @@
     .product-card ul li {
       padding: 6px 0 6px 24px;
       position: relative;
-      color: #c8c0b4;
+      color: var(--text);
       font-size: 16px;
       line-height: 1.6;
     }
@@ -224,24 +258,8 @@
       content: "✓";
       position: absolute;
       left: 0;
-      color: #5EE3FF;
+      color: var(--cyan);
       font-weight: 700;
-    }
-
-    /* Bundle variant */
-    .product-card.bundle {
-      background: linear-gradient(135deg, rgba(40,105,110,0.2), rgba(94,227,255,0.08));
-      border-color: rgba(94,227,255,0.3);
-    }
-    .product-card.bundle .savings {
-      display: inline-block;
-      background: #5EE3FF;
-      color: #0A0E1A;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 4px;
-      margin-top: 8px;
     }
 
     /* ─── Profession Grid ─── */
@@ -252,17 +270,17 @@
       margin: 24px 0;
     }
     .profession-card {
-      background: #141829;
-      border: 1px solid rgba(244,236,220,0.08);
+      background: var(--card-bg);
+      border: 1px solid var(--line);
       border-radius: 8px;
       padding: 16px 20px;
       font-size: 15px;
-      color: #c8c0b4;
+      color: var(--text);
       transition: border-color 0.2s;
     }
     .profession-card:hover { border-color: rgba(94,227,255,0.3); }
     .profession-card .emoji { font-size: 24px; margin-bottom: 8px; display: block; }
-    .profession-card strong { color: #F4ECDC; display: block; margin-bottom: 4px; }
+    .profession-card strong { color: var(--head); display: block; margin-bottom: 4px; }
 
     /* ─── Economics Table ─── */
     .econ-table {
@@ -272,26 +290,35 @@
     }
     .econ-table td {
       padding: 12px 16px;
-      border-bottom: 1px solid rgba(244,236,220,0.08);
+      border-bottom: 1px solid var(--line);
       font-size: 16px;
     }
-    .econ-table td:first-child { color: #c8c0b4; }
-    .econ-table td:last-child { text-align: right; color: #888; }
+    .econ-table td:first-child { color: var(--text); }
+    .econ-table td:last-child { text-align: right; color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 14px; }
     .econ-table tr:last-child td {
       border-bottom: none;
-      color: #5EE3FF;
+      color: var(--cyan);
       font-weight: 700;
     }
-    .econ-table tr:last-child td:last-child { color: #5EE3FF; }
+    .econ-table tr:last-child td:last-child { color: var(--cyan); }
 
     /* ─── Guarantee ─── */
     .guarantee {
       text-align: center;
       padding: 48px 32px;
-      background: rgba(94,227,255,0.04);
-      border: 1px solid rgba(94,227,255,0.15);
+      background: var(--panel);
+      border: 1px solid var(--line);
       border-radius: 12px;
       margin: 32px 0;
+      position: relative;
+    }
+    .guarantee::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal));
+      border-radius: 12px 12px 0 0;
     }
     .guarantee .seal { font-size: 48px; margin-bottom: 16px; }
     .guarantee h3 { margin-bottom: 12px; }
@@ -300,8 +327,8 @@
     .faq-item {
       margin: 24px 0;
       padding: 24px;
-      background: #141829;
-      border: 1px solid rgba(244,236,220,0.08);
+      background: var(--card-bg);
+      border: 1px solid var(--line);
       border-radius: 10px;
       transition: border-color 0.2s;
     }
@@ -309,12 +336,12 @@
     .faq-item h4 {
       font-size: 18px;
       font-weight: 600;
-      color: #fff;
+      color: var(--head);
       margin-bottom: 8px;
     }
     .faq-item p { font-size: 16px; margin-bottom: 0; }
 
-    /* ─── Checklist (Who This Is For / Not For) ─── */
+    /* ─── Checklist ─── */
     .checklist { list-style: none; margin: 20px 0; }
     .checklist li {
       padding: 8px 0 8px 32px;
@@ -328,20 +355,21 @@
     }
     .checklist li.yes::before { content: "✅"; }
     .checklist li.no::before { content: "❌"; }
-    .checklist li.yes { color: #c8c0b4; }
-    .checklist li.no { color: #888; }
+    .checklist li.yes { color: var(--text); }
+    .checklist li.no { color: var(--muted); }
 
     /* ─── Pull Quote ─── */
     .pull-quote {
-      border-left: 3px solid #5EE3FF;
+      border-left: 3px solid var(--cyan);
       padding: 20px 24px;
       margin: 32px 0;
       background: rgba(94,227,255,0.04);
       border-radius: 0 8px 8px 0;
       font-size: 19px;
       font-style: italic;
-      color: #F4ECDC;
+      color: var(--head);
       line-height: 1.6;
+      box-shadow: -4px 0 14px rgba(94,227,255,0.06);
     }
 
     /* ─── Why Now Modal ─── */
@@ -357,8 +385,8 @@
     }
     .modal-overlay.active { display: flex; }
     .modal-content {
-      background: #141824;
-      border: 1px solid rgba(94,227,255,0.2);
+      background: var(--panel);
+      border: 1px solid var(--line);
       border-radius: 12px;
       max-width: 580px;
       width: 100%;
@@ -367,10 +395,18 @@
       max-height: 90vh;
       overflow-y: auto;
     }
+    .modal-content::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal));
+      border-radius: 12px 12px 0 0;
+    }
     .modal-close {
       position: absolute;
       top: 16px; right: 20px;
-      color: #888;
+      color: var(--muted);
       font-size: 24px;
       text-decoration: none;
       cursor: pointer;
@@ -378,7 +414,7 @@
       border: none;
       font-family: inherit;
     }
-    .modal-close:hover { color: #fff; }
+    .modal-close:hover { color: var(--head); }
 
     /* ─── Final CTA ─── */
     .final-cta {
@@ -393,11 +429,12 @@
     footer {
       text-align: center;
       padding: 40px 0;
-      border-top: 1px solid rgba(244,236,220,0.08);
-      color: #666;
-      font-size: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
     }
-    footer a { color: #5EE3FF; text-decoration: none; }
+    footer a { color: var(--cyan); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
     /* ─── Responsive ─── */
@@ -449,16 +486,16 @@
   <div class="modal-content">
     <button class="modal-close" onclick="document.getElementById('whyNowModal').classList.remove('active')">&times;</button>
     <h3 style="color:#5EE3FF;margin-bottom:16px;">Why Instagram Is Boosting Reels Creators</h3>
-    <p style="color:#c8c0b4;font-size:16px;margin-bottom:12px;">Instagram is in a war with TikTok and YouTube for short-form video dominance. To win, they need more Reels content. Their solution? <strong style="color:#fff;">Actively boost anyone who posts Reels consistently.</strong></p>
-    <p style="color:#c8c0b4;font-size:16px;margin-bottom:12px;">Here's what that means for your account:</p>
-    <ul style="color:#c8c0b4;font-size:16px;margin:0 0 16px 20px;">
+    <p style="color:#c9d1d9;font-size:16px;margin-bottom:12px;">Instagram is in a war with TikTok and YouTube for short-form video dominance. To win, they need more Reels content. Their solution? <strong style="color:#f0f6fc;">Actively boost anyone who posts Reels consistently.</strong></p>
+    <p style="color:#c9d1d9;font-size:16px;margin-bottom:12px;">Here's what that means for your account:</p>
+    <ul style="color:#c9d1d9;font-size:16px;margin:0 0 16px 20px;">
       <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">3–5× more reach</strong> — Reels get shown to non-followers on the Explore page and in suggested content. Static posts don't.</li>
       <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">New creator boost</strong> — Instagram gives newer Reels accounts a temporary reach spike to test their content. This is your unfair advantage if you start now.</li>
       <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">Algorithmic learning</strong> — the more you post, the faster Instagram learns who your audience is. 3 posts/day = 90 data points/month. 1 post/week = 4.</li>
       <li style="margin-bottom:8px;"><strong style="color:#5EE3FF;">Compounding effect</strong> — older Reels keep getting pushed for weeks. A video you posted in Month 1 still drives views in Month 3.</li>
     </ul>
-    <p style="color:#c8c0b4;font-size:16px;margin-bottom:12px;"><strong style="color:#fff;">The window is closing.</strong> As more creators adopt Reels, the boost per creator shrinks. Accounts that build their content engine in 2026 will have a <strong style="color:#5EE3FF;">compounding advantage</strong> over everyone who starts in 2027.</p>
-    <p style="color:#c8c0b4;font-size:14px;margin:0;"><em>Sources: Instagram's @creators account, Meta's Q4 2025 earnings call, Later.com's 2026 Instagram Algorithm Report.</em></p>
+    <p style="color:#c9d1d9;font-size:16px;margin-bottom:12px;"><strong style="color:#f0f6fc;">The window is closing.</strong> As more creators adopt Reels, the boost per creator shrinks. Accounts that build their content engine in 2026 will have a <strong style="color:#5EE3FF;">compounding advantage</strong> over everyone who starts in 2027.</p>
+    <p style="color:#8b949e;font-size:14px;margin:0;"><em>Sources: Instagram's @creators account, Meta's Q4 2025 earnings call, Later.com's 2026 Instagram Algorithm Report.</em></p>
   </div>
 </div>
 

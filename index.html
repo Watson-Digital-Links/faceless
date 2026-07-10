@@ -10,18 +10,57 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/face-blurred-features.jpg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0A0E1A;
+      --panel: #161b22;
+      --panel2: #1c232d;
+      --cyan: #5EE3FF;
+      --teal: #28696E;
+      --cream: #F4ECDC;
+      --text: #c9d1d9;
+      --head: #f0f6fc;
+      --muted: #8b949e;
+      --line: #2d333b;
+      --card-bg: #141829;
+      --card-border: #1E2540;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0A0E1A;
-      color: #F4ECDC;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(94,227,255,0.02) 39px, rgba(94,227,255,0.02) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(94,227,255,0.02) 39px, rgba(94,227,255,0.02) 40px);
+      color: var(--cream);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 40px 20px;
     }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Brand Bar */
+    .brandbar {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brandbar .brand { color: var(--cyan); font-weight: 700; }
+    .brandbar .tag { color: var(--teal); }
 
     /* Profile Header */
     .profile {
@@ -34,8 +73,8 @@
       border-radius: 50%;
       margin: 0 auto 16px;
       overflow: hidden;
-      border: 3px solid #5EE3FF;
-      box-shadow: 0 0 30px rgba(94,227,255,0.15);
+      border: 3px solid var(--cyan);
+      box-shadow: 0 0 30px rgba(94,227,255,0.2), 0 0 60px rgba(94,227,255,0.06);
     }
     .avatar img {
       width: 100%;
@@ -44,43 +83,52 @@
     }
     .name {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 4px;
+      color: var(--head);
     }
     .handle {
       font-size: 14px;
-      color: #5EE3FF;
+      color: var(--cyan);
       margin-bottom: 10px;
+      font-family: 'JetBrains Mono', monospace;
     }
     .bio {
       font-size: 14px;
-      color: #8B9CB7;
+      color: var(--muted);
       max-width: 340px;
       line-height: 1.6;
       margin: 0 auto;
     }
     .faceless-tag {
       display: inline-block;
-      background: rgba(94,227,255,0.1);
-      border: 1px solid rgba(94,227,255,0.3);
-      color: #5EE3FF;
+      background: rgba(94,227,255,0.08);
+      border: 1px solid rgba(94,227,255,0.25);
+      color: var(--cyan);
       font-size: 11px;
       font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
+      padding: 5px 14px;
+      border-radius: 6px;
       margin-top: 12px;
       letter-spacing: 1px;
       text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      box-shadow: 0 0 12px rgba(94,227,255,0.08);
     }
 
     /* Section Labels */
     .section-label {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #5EE3FF;
+      color: var(--cyan);
       margin: 36px 0 16px;
       text-align: center;
+    }
+    .section-label::before {
+      content: "// ";
+      color: var(--teal);
     }
 
     /* Product Cards with Images */
@@ -88,25 +136,39 @@
       width: 100%;
       max-width: 400px;
       margin: 10px auto;
-      background: #141829;
-      border: 1px solid #1E2540;
-      border-radius: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
       overflow: hidden;
       text-decoration: none;
-      color: #F4ECDC;
+      color: var(--cream);
       transition: all 0.25s;
       display: block;
+      position: relative;
+    }
+    .product-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal));
+      z-index: 1;
     }
     .product-card:hover {
-      border-color: #5EE3FF;
+      border-color: var(--cyan);
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(94,227,255,0.1);
+      box-shadow: 0 12px 32px rgba(94,227,255,0.12);
     }
     .product-card.featured {
-      border-color: #5EE3FF;
+      border-color: rgba(94,227,255,0.3);
     }
     .product-card.jvzoo {
       border-color: #9B59B6;
+    }
+    .product-card.jvzoo::before {
+      background: linear-gradient(90deg, #9B59B6, #6B3FA0);
     }
     .product-card.jvzoo:hover {
       border-color: #BB79D6;
@@ -140,20 +202,21 @@
       font-weight: 700;
       margin-bottom: 6px;
       line-height: 1.3;
+      color: var(--head);
     }
     .card-desc {
       font-size: 13px;
-      color: #8B9CB7;
+      color: var(--muted);
       line-height: 1.5;
       margin-bottom: 6px;
     }
     .card-win {
       font-size: 12px;
-      color: #5EE3FF;
+      color: var(--cyan);
       font-weight: 500;
     }
 
-    /* Simple link cards (no product image) */
+    /* Simple link cards */
     .link-card {
       display: flex;
       align-items: center;
@@ -162,52 +225,73 @@
       max-width: 400px;
       padding: 16px;
       margin: 8px auto;
-      background: #141829;
-      border: 1px solid #1E2540;
-      border-radius: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
       text-decoration: none;
-      color: #F4ECDC;
+      color: var(--cream);
       transition: all 0.2s;
+      position: relative;
+    }
+    .link-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal));
+      border-radius: 12px 12px 0 0;
+      opacity: 0.5;
     }
     .link-card:hover {
-      background: #1A2040;
-      border-color: #5EE3FF;
+      background: var(--panel2);
+      border-color: var(--cyan);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(94,227,255,0.08);
+      box-shadow: 0 8px 24px rgba(94,227,255,0.1);
     }
     .card-icon {
       flex-shrink: 0;
       width: 48px;
       height: 48px;
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      background: rgba(94,227,255,0.08);
+      background: rgba(94,227,255,0.06);
+      border: 1px solid var(--line);
     }
     .card-content { flex: 1; min-width: 0; }
     .card-arrow {
       flex-shrink: 0;
-      color: #4A5568;
+      color: var(--muted);
       font-size: 18px;
+      font-family: 'JetBrains Mono', monospace;
       transition: color 0.2s;
     }
-    .link-card:hover .card-arrow { color: #5EE3FF; }
+    .link-card:hover .card-arrow { color: var(--cyan); }
 
     /* Footer */
     .footer {
       margin-top: 48px;
       text-align: center;
-      font-size: 12px;
-      color: #4A5568;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
       line-height: 1.8;
     }
-    .footer a { color: #5EE3FF; text-decoration: none; }
+    .footer a { color: var(--cyan); text-decoration: none; }
     .footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
+
+<!-- Brand Bar -->
+<div class="brandbar">
+  <div class="brand">watson-digital.net</div>
+  <div class="tag">// link-in-bio</div>
+</div>
 
 <!-- Profile Header -->
 <div class="profile">
