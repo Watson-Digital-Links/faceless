@@ -1,386 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI tools and systems to build your faceless side hustle—curated and field-tested by Watson Digital.">
+  <meta name="theme-color" content="#070a10">
   <title>Watson Digital — AI Side Hustle Tools</title>
-  <meta name="description" content="AI tools and systems to build your faceless side hustle. No camera, no code, no audience needed.">
-  <meta property="og:title" content="Watson Digital — AI Side Hustle Tools">
-  <meta property="og:description" content="AI tools and systems to build your faceless side hustle. No camera. No code. Just AI.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/face-blurred-features.jpg">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0A0E1A;
-      --panel: #161b22;
-      --panel2: #1c232d;
-      --cyan: #5EE3FF;
-      --teal: #28696E;
-      --cream: #F4ECDC;
-      --text: #c9d1d9;
-      --head: #f0f6fc;
-      --muted: #8b949e;
-      --line: #2d333b;
-      --card-bg: #141829;
-      --card-border: #1E2540;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(94,227,255,0.02) 39px, rgba(94,227,255,0.02) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(94,227,255,0.02) 39px, rgba(94,227,255,0.02) 40px);
-      color: var(--cream);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-
-    .mono { font-family: 'JetBrains Mono', monospace; }
-
-    /* Brand Bar */
-    .brandbar {
-      width: 100%;
-      max-width: 400px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 28px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brandbar .brand { color: var(--cyan); font-weight: 700; }
-    .brandbar .tag { color: var(--teal); }
-
-    /* Profile Header */
-    .profile {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      overflow: hidden;
-      border: 3px solid var(--cyan);
-      box-shadow: 0 0 30px rgba(94,227,255,0.2), 0 0 60px rgba(94,227,255,0.06);
-    }
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .name {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 4px;
-      color: var(--head);
-    }
-    .handle {
-      font-size: 14px;
-      color: var(--cyan);
-      margin-bottom: 10px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .bio {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 340px;
-      line-height: 1.6;
-      margin: 0 auto;
-    }
-    .faceless-tag {
-      display: inline-block;
-      background: rgba(94,227,255,0.08);
-      border: 1px solid rgba(94,227,255,0.25);
-      color: var(--cyan);
-      font-size: 11px;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 6px;
-      margin-top: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-family: 'JetBrains Mono', monospace;
-      box-shadow: 0 0 12px rgba(94,227,255,0.08);
-    }
-
-    /* Section Labels */
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--cyan);
-      margin: 36px 0 16px;
-      text-align: center;
-    }
-    .section-label::before {
-      content: "// ";
-      color: var(--teal);
-    }
-
-    /* Product Cards with Images */
-    .product-card {
-      width: 100%;
-      max-width: 400px;
-      margin: 10px auto;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      overflow: hidden;
-      text-decoration: none;
-      color: var(--cream);
-      transition: all 0.25s;
-      display: block;
-      position: relative;
-    }
-    .product-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--teal));
-      z-index: 1;
-    }
-    .product-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(94,227,255,0.12);
-    }
-    .product-card.featured {
-      border-color: rgba(94,227,255,0.3);
-    }
-    .product-card.jvzoo {
-      border-color: #9B59B6;
-    }
-    .product-card.jvzoo::before {
-      background: linear-gradient(90deg, #9B59B6, #6B3FA0);
-    }
-    .product-card.jvzoo:hover {
-      border-color: #BB79D6;
-      box-shadow: 0 12px 32px rgba(155,89,182,0.12);
-    }
-
-    .card-image {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0D1117;
-    }
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .card-image.contain img {
-      object-fit: contain;
-      padding: 12px;
-    }
-
-    .card-body {
-      padding: 16px 18px 18px;
-    }
-    .card-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      line-height: 1.3;
-      color: var(--head);
-    }
-    .card-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-bottom: 6px;
-    }
-    .card-win {
-      font-size: 12px;
-      color: var(--cyan);
-      font-weight: 500;
-    }
-
-    /* Simple link cards */
-    .link-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      max-width: 400px;
-      padding: 16px;
-      margin: 8px auto;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--cream);
-      transition: all 0.2s;
-      position: relative;
-    }
-    .link-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--teal));
-      border-radius: 12px 12px 0 0;
-      opacity: 0.5;
-    }
-    .link-card:hover {
-      background: var(--panel2);
-      border-color: var(--cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(94,227,255,0.1);
-    }
-    .card-icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      background: rgba(94,227,255,0.06);
-      border: 1px solid var(--line);
-    }
-    .card-content { flex: 1; min-width: 0; }
-    .card-arrow {
-      flex-shrink: 0;
-      color: var(--muted);
-      font-size: 18px;
-      font-family: 'JetBrains Mono', monospace;
-      transition: color 0.2s;
-    }
-    .link-card:hover .card-arrow { color: var(--cyan); }
-
-    /* Footer */
-    .footer {
-      margin-top: 48px;
-      text-align: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-    .footer a { color: var(--cyan); text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
+    :root{--bg:#070a10;--panel:#0d121c;--panel2:#111827;--text:#edf7ff;--muted:#8693a5;--line:#1d2838;--cyan:#5ee3ff;--violet:#8c72ff;--lime:#b9ff69;--gutter:100px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 76% 8%,#12345166,transparent 27%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}.wrap{width:min(1280px,calc(100% - (var(--gutter) * 2)));margin-inline:auto}.mono{font:600 11px/1 JetBrains Mono,monospace;letter-spacing:.13em;text-transform:uppercase}.kicker{color:var(--cyan)}a{color:inherit}.skip{position:absolute;left:-999px;top:10px;background:var(--cyan);color:#071017;padding:10px;z-index:20}.skip:focus{left:10px}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:-.04em;text-decoration:none}.brand span{color:var(--cyan)}.navright{display:flex;align-items:center;gap:20px}.status{color:var(--lime)}.status:before{content:"";display:inline-block;width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 14px var(--lime);margin-right:8px}.navright a{color:var(--text);text-decoration:none;padding:12px 17px;border:1px solid var(--line);border-radius:9px;font-size:13px}
+    .hero{padding:70px 0 82px;display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center}h1{font-size:clamp(54px,6.8vw,98px);line-height:.89;letter-spacing:-.068em;margin:23px 0}.grad{background:linear-gradient(100deg,var(--cyan),#b4efff 44%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.lede{font-size:18px;line-height:1.58;color:var(--muted);max-width:610px}.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:14px 18px;border-radius:9px;background:var(--cyan);color:#071017;font-weight:750;font-size:14px;border:1px solid var(--cyan);transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px #5ee3ff1f}.btn.secondary{color:var(--text);background:transparent;border-color:var(--line)}
+    .profile-shell{border:1px solid #29405a;border-radius:18px;background:#09101acc;box-shadow:0 35px 100px #000a,0 0 80px #4bdcff13;overflow:hidden}.shell-top{height:49px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 17px;color:var(--muted)}.lights{display:flex;gap:6px}.lights i{width:8px;height:8px;border-radius:50%;background:#2c3746}.lights i:first-child{background:var(--cyan)}.profile-panel{padding:24px;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center}.avatar{aspect-ratio:1;border:1px solid #2c3d50;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#172438,#0a1019)}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.handle{color:var(--cyan);margin-bottom:8px}.profile-panel h2{font-size:32px;letter-spacing:-.045em;margin:0 0 12px}.profile-panel p{color:var(--muted);line-height:1.58;margin:0}.faceless{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid #5ee3ff55;color:#b8edfa;border-radius:999px;padding:9px 12px;font-size:12px}
+    .signal{border-block:1px solid var(--line);padding:17px 0;overflow:hidden}.signal .wrap{display:flex;justify-content:space-between;color:#6f7c8e;white-space:nowrap;gap:34px}.signal strong{color:#b9c8d8;font-size:12px;font-weight:500}
+    section.block{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px}.section-head h2{font-size:clamp(40px,5vw,68px);line-height:.95;letter-spacing:-.058em;max-width:760px;margin:14px 0 0}.section-head p{color:var(--muted);max-width:430px;line-height:1.62}
+    .opportunity{padding:100px 0;border-bottom:1px solid var(--line)}.opportunity-shell{border:1px solid #29405a;border-radius:20px;padding:42px;background:radial-gradient(circle at 92% 10%,#8c72ff24,transparent 30%),var(--panel)}.opportunity-head{display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:end}.opportunity h2{font-size:clamp(42px,5.2vw,72px);line-height:.94;letter-spacing:-.06em;margin:15px 0 0}.opportunity-copy{color:var(--muted);font-size:17px;line-height:1.63;margin:0}.opportunity-copy strong{color:var(--text)}.opportunity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}.opportunity-card{min-height:230px;padding:24px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#0f1622,#0a0e16)}.opportunity-card .num{color:var(--cyan)}.opportunity-card h3{font-size:22px;line-height:1.12;margin:50px 0 11px}.opportunity-card p{color:var(--muted);font-size:14px;line-height:1.55;margin:0}.evidence{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-top:22px;color:#657286;font-size:12px;line-height:1.55}.evidence a{color:#a9dcec;text-decoration:none}.evidence a:hover{text-decoration:underline}
+    .offer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.offer-card{display:grid;grid-template-columns:180px 1fr;gap:22px;text-decoration:none;border:1px solid var(--line);border-radius:18px;padding:20px;background:linear-gradient(145deg,#0f1622,#0a0e16);transition:.22s;position:relative;overflow:hidden;min-height:230px}.offer-card:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(var(--cyan),var(--violet));opacity:.85}.offer-card:hover{transform:translateY(-4px);border-color:#5ee3ff66;box-shadow:0 20px 50px #0008}.offer-card.featured{grid-column:1/-1;grid-template-columns:310px 1fr;background:radial-gradient(circle at 0 50%,#5ee3ff13,transparent 32%),linear-gradient(145deg,#111b2a,#0a0e16)}.offer-card.store{grid-column:1/-1;min-height:0;grid-template-columns:72px 1fr auto;align-items:center}.card-media{border:1px solid #243449;border-radius:12px;overflow:hidden;background:#0a1019;min-height:175px;display:grid;place-items:center}.card-media img{width:100%;height:100%;object-fit:cover;display:block}.card-media.contain img{object-fit:contain;padding:12px}.offer-card.featured .card-media{min-height:220px}.card-icon{width:56px;height:56px;display:grid;place-items:center;border-radius:12px;border:1px solid #2a3c52;background:#111a28;font-size:25px}.card-copy{align-self:center}.card-copy .type{color:var(--cyan);margin-bottom:18px}.card-copy h3{font-size:clamp(24px,3vw,37px);line-height:1.04;letter-spacing:-.045em;margin:0 0 12px}.card-copy p{color:var(--muted);line-height:1.57;margin:0}.card-win{color:#b9c8d8!important;font-size:13px;margin-top:18px!important}.arrow{width:47px;height:47px;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#071017;font-size:20px}.disclosure{font-size:12px;color:#657286;margin-top:20px;line-height:1.55}.system-stack{grid-template-columns:1fr}.system-stack .offer-card{grid-template-columns:minmax(360px,46%) 1fr;min-height:320px}.system-stack .card-media{min-height:276px}
+    .resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.resource{display:flex;align-items:center;gap:17px;text-decoration:none;border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--panel);transition:.2s}.resource:hover{border-color:#5ee3ff55;transform:translateY(-3px)}.resource .card-icon{flex:0 0 auto}.resource h3{margin:0 0 7px;font-size:19px}.resource p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}.resource .go{margin-left:auto;color:var(--cyan);font-size:22px}
+    .closing{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;border:1px solid #29405a;border-radius:20px;padding:42px;background:radial-gradient(circle at 90% 20%,#8c72ff24,transparent 30%),var(--panel)}.closing h2{font-size:clamp(38px,5vw,65px);line-height:.95;letter-spacing:-.055em;margin:12px 0}.closing p{color:var(--muted);line-height:1.6}.closing .actions{justify-content:flex-end}
+    footer{padding:32px 0 42px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:25px;color:#617083;font-size:12px}footer a{color:var(--cyan);text-decoration:none}
+    @media(max-width:950px){:root{--gutter:40px}.hero{grid-template-columns:1fr}.section-head{display:block}.opportunity-head{grid-template-columns:1fr}.opportunity-grid{grid-template-columns:1fr}.opportunity-card{min-height:0}.opportunity-card h3{margin-top:34px}.offer-grid{grid-template-columns:1fr}.offer-card,.offer-card.featured{grid-column:auto}.system-stack .offer-card{grid-template-columns:minmax(300px,44%) 1fr}.closing{grid-template-columns:1fr}.closing .actions{justify-content:flex-start}}
+    @media(max-width:680px){:root{--gutter:20px}nav{height:68px}.navright .status{display:none}.navright{gap:8px}.navright a{padding:10px 12px}.hero{padding:50px 0 64px;gap:34px}h1{font-size:clamp(48px,14vw,67px)}.lede{font-size:17px}.actions .btn{width:100%}.profile-panel{grid-template-columns:1fr}.avatar{max-width:180px}.signal .wrap{justify-content:flex-start}.block{padding:72px 0!important}.opportunity{padding:72px 0}.opportunity-shell{padding:30px 24px}.opportunity h2{font-size:clamp(39px,12vw,54px)}.opportunity-grid{grid-template-columns:1fr}.evidence{display:block}.evidence a{display:block;margin-top:8px}.offer-card,.offer-card.featured,.system-stack .offer-card{grid-template-columns:1fr}.system-stack .card-media{min-height:220px}.offer-card.store{grid-template-columns:56px 1fr auto}.offer-card.store .card-copy p{display:none}.offer-card.store .card-icon{width:48px;height:48px}.resource-grid{grid-template-columns:1fr}.closing{padding:30px 24px}footer{display:block;line-height:1.8}footer span{display:block}footer span+span{margin-top:6px}}
   </style>
 </head>
 <body>
+  <a class="skip" href="#offers">Skip to offers</a>
+  <nav class="wrap"><a class="brand" href="/">WATSON<span>/DIGITAL</span></a><div class="navright"><span class="mono status">Systems online</span><a href="/ai-content-engine/">3Reels systems ↗</a></div></nav>
 
-<!-- Brand Bar -->
-<div class="brandbar">
-  <div class="brand">watson-digital.net</div>
-  <div class="tag">// link-in-bio</div>
-</div>
+  <main>
+    <section class="hero wrap"><div><span class="mono kicker">AI side-hustle control room</span><h1>Faceless.<br><span class="grad">By design.</span></h1><p class="lede">AI tools &amp; systems to build your faceless side hustle. No camera. No code. No audience. Just AI and a few nights a week.</p><div class="actions"><a class="btn" href="#offers">Open the tool stack ↗</a><a class="btn secondary" href="#opportunity">Why Instagram now</a></div></div><article class="profile-shell"><div class="shell-top"><span class="mono">Operator profile / Live</span><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span></div><div class="profile-panel"><div class="avatar"><img src="assets/face-blurred-features.jpg" alt="Watson Digital"></div><div><div class="mono handle">@awatson.digital</div><h2>Watson Digital</h2><p>AI content systems for building and testing a faceless brand from zero.</p><span class="faceless"><span aria-hidden="true">●</span> Faceless by Design</span></div></div></article></section>
 
-<!-- Profile Header -->
-<div class="profile">
-  <div class="avatar">
-    <img src="assets/face-blurred-features.jpg" alt="Watson Digital">
-  </div>
-  <div class="name">Watson Digital</div>
-  <div class="handle">@awatson.digital</div>
-  <div class="bio">AI tools & systems to build your faceless side hustle. No camera. No code. No audience. Just AI and a few nights a week.</div>
-  <div class="faceless-tag">🤖 Faceless by Design</div>
-</div>
+    <section class="opportunity wrap" id="opportunity"><div class="opportunity-shell"><div class="opportunity-head"><div><span class="mono kicker">The small-account opening</span><h2>You don’t need followers to earn the first test.</h2></div><p class="opportunity-copy">Instagram can recommend eligible original Reels to a small audience of likely interested <strong>non-followers</strong>. Strong early response can earn broader distribution. Your follower count is not the gate; the content still has to win the test.</p></div><div class="opportunity-grid"><article class="opportunity-card"><span class="mono num">01 / GET TESTED</span><h3>Reach beyond the account</h3><p>A public account with recommendation-eligible original content can enter discovery before it has built a large following.</p></article><article class="opportunity-card"><span class="mono num">02 / EARN REACH</span><h3>Performance opens the next audience</h3><p>Instagram can expand distribution when the first viewers watch, share, save, and respond. Reach is earned in stages—not guaranteed.</p></article><article class="opportunity-card"><span class="mono num">03 / CREATE ODDS</span><h3>Three daily tests compound</h3><p>Three Reels per day creates roughly 90 monthly attempts to find the hooks, subjects, and formats the market wants.</p></article></div><div class="evidence"><span>The advantage is access to recommendation testing—not a promised new-account boost.</span><a href="https://creators.instagram.com/blog/recommendations-and-originality" target="_blank" rel="noopener">Instagram recommendation guidance ↗</a></div></div></section>
 
-<!-- Start Here -->
-<div class="section-label">🔥 Start Here</div>
+    <div class="signal"><div class="wrap"><strong>DISCOVER</strong><span>→</span><strong>BUILD</strong><span>→</span><strong>POST</strong><span>→</span><strong>MEASURE</strong><span>→</span><strong>COMPOUND</strong></div></div>
 
-<a href="https://allen.store/allen?aff=5to9" class="product-card featured" target="_blank" rel="noopener">
-  <div class="card-image contain">
-    <img src="assets/allen-hero.jpg" alt="Allen AI Platform">
-  </div>
-  <div class="card-body">
-    <div class="card-title">Allen AI — The Tool Behind Everything</div>
-    <div class="card-desc">AI writes your scripts, finds trending content, and builds your store. You just post.</div>
-    <div class="card-win">→ Start posting tonight, even with zero followers</div>
-  </div>
-</a>
+    <section class="block wrap" id="offers"><div class="section-head"><div><span class="mono kicker">Start here</span><h2>The platform behind the output.</h2></div><p>The core AI platform for finding ideas, generating content, and turning consistent output into a repeatable operating system.</p></div><div class="offer-grid">
+      <a href="https://allen.store/allen?aff=5to9" class="offer-card featured" target="_blank" rel="noopener sponsored"><div class="card-media"><img src="assets/allen-hero.jpg" alt="Allen AI Platform"></div><div class="card-copy"><div class="mono type">Core content platform</div><h3>Allen AI — The Tool Behind Everything</h3><p>AI writes your scripts, finds trending content, and builds your store. You just post.</p><p class="card-win">→ Start posting tonight, even with zero followers</p></div></a>
+    </div><p class="disclosure">Disclosure: Watson Digital may earn a commission from qualifying purchases made through affiliate links, at no additional cost to you.</p></section>
 
-<a href="https://allen.store/5to9/watsondigital" class="link-card" target="_blank" rel="noopener">
-  <div class="card-icon">🛒</div>
-  <div class="card-content">
-    <div class="card-title">Our Store — Digital Products & Bundles</div>
-    <div class="card-desc">Done-for-you templates, courses, and the B-Roll bundle.</div>
-    <div class="card-win">→ Skip the setup — grab what's already working</div>
-  </div>
-  <div class="card-arrow">›</div>
-</a>
+    <section class="block wrap"><div class="section-head"><div><span class="mono kicker">Full systems</span><h2>When you want the whole playbook.</h2></div><p>Two active, long-form systems for building AI-powered content and a faceless business from the ground up.</p></div><div class="offer-grid system-stack">
+      <a href="https://jvz5.com/c/3591111/434205" class="offer-card" target="_blank" rel="noopener sponsored"><div class="card-media contain"><img src="assets/ai-arbitrage-blueprint.png" alt="AI Arbitrage Blueprint"></div><div class="card-copy"><div class="mono type">Proven AI business system</div><h3>AI Arbitrage Blueprint</h3><p>The complete playbook for building income with AI-powered content. Step-by-step, no fluff.</p><p class="card-win">→ The same system behind our daily Reels</p></div></a>
+      <a href="https://jvz5.com/c/3591111/435245" class="offer-card" target="_blank" rel="noopener sponsored"><div class="card-media contain"><img src="assets/freedom-profit-system.png" alt="Freedom Profit System"></div><div class="card-copy"><div class="mono type">Complete faceless launch system</div><h3>Freedom Profit System</h3><p>Build a faceless AI business from scratch. No experience needed — the system does the heavy lifting.</p><p class="card-win">→ Your first content can go live this week</p></div></a>
+    </div><p class="disclosure">Disclosure: Watson Digital may earn a commission if you purchase through these links. Recommendations are based on fit, not guaranteed results.</p></section>
 
-<!-- Systems -->
-<div class="section-label">⚡ Full Systems</div>
+    <section class="block wrap"><div class="closing"><div><span class="mono kicker">Watson original system</span><h2>Three Reels. One repeatable machine.</h2><p>Build faceless daily volume, then add a lifelike personal avatar when the message deserves your face and voice.</p></div><div class="actions"><a class="btn" href="/ai-content-engine/">View 3Reels systems ↗</a></div></div></section>
+  </main>
 
-<a href="https://jvz5.com/c/3591111/434205" class="product-card jvzoo" target="_blank" rel="noopener">
-  <div class="card-image contain">
-    <img src="assets/ai-arbitrage-blueprint.png" alt="AI Arbitrage Blueprint">
-  </div>
-  <div class="card-body">
-    <div class="card-title">AI Arbitrage Blueprint</div>
-    <div class="card-desc">The complete playbook for building income with AI-powered content. Step-by-step, no fluff.</div>
-    <div class="card-win">→ The same system behind our daily Reels</div>
-  </div>
-</a>
-
-<a href="https://jvz5.com/c/3591111/435245" class="product-card jvzoo" target="_blank" rel="noopener">
-  <div class="card-image contain">
-    <img src="assets/freedom-profit-system.png" alt="Freedom Profit System">
-  </div>
-  <div class="card-body">
-    <div class="card-title">Freedom Profit System</div>
-    <div class="card-desc">Build a faceless AI business from scratch. No experience needed — the system does the heavy lifting.</div>
-    <div class="card-win">→ Your first content can go live this week</div>
-  </div>
-</a>
-
-<!-- Free Resources -->
-<div class="section-label">📚 Free Resources</div>
-
-<a href="https://www.instagram.com/awatson.digital/" class="link-card" target="_blank" rel="noopener">
-  <div class="card-icon">📱</div>
-  <div class="card-content">
-    <div class="card-title">Follow @awatson.digital</div>
-    <div class="card-desc">Daily AI side hustle tips, proof-of-concept Reels, and behind-the-scenes of what's actually working.</div>
-    <div class="card-win">→ See real results before you commit to anything</div>
-  </div>
-  <div class="card-arrow">›</div>
-</a>
-
-<a href="https://www.instagram.com/awatson.digital/" class="link-card" target="_blank" rel="noopener">
-  <div class="card-icon">💬</div>
-  <div class="card-content">
-    <div class="card-title">Comment "FACELESS" on Any Post</div>
-    <div class="card-desc">Get the free 5-play starter kit delivered to your DMs. Zero cost, zero commitment.</div>
-    <div class="card-win">→ The exact plays behind our first 100 Reels</div>
-  </div>
-  <div class="card-arrow">›</div>
-</a>
-
-<!-- Footer -->
-<div class="footer">
-  <p>Built faceless. Built with AI. Built on nights & weekends.</p>
-  <p>© 2026 Watson Digital · <a href="https://allen.store/allen?aff=5to9">Powered by Allen AI</a></p>
-</div>
-
+  <footer class="wrap"><span>Built faceless. Built with AI. Built on nights &amp; weekends.</span><span>© 2026 Watson Digital · <a href="https://allen.store/allen?aff=5to9" target="_blank" rel="noopener sponsored">Powered by Allen AI</a></span></footer>
 </body>
 </html>
